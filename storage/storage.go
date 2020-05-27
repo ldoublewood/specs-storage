@@ -41,4 +41,5 @@ type Sealer interface {
 	SealCommit1(ctx context.Context, sector abi.SectorID, ticket abi.SealRandomness, seed abi.InteractiveSealRandomness, pieces []abi.PieceInfo, cids SectorCids) (Commit1Out, error)
 	SealCommit2(ctx context.Context, sector abi.SectorID, c1o Commit1Out) (Proof, error)
 	FinalizeSector(ctx context.Context, sector abi.SectorID) error
+	Complete(ctx context.Context, sector abi.SectorID) error
 }
